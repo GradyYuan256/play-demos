@@ -19,7 +19,7 @@ function handleDragLeave(e) {
 
 droppable.addEventListener("drop", handleDrop);
 function handleDrop(e) {
-  e.preventDefault();
+  e.preventDefault(); // 这里要加上
   // const draggedId = e.dataTransfer.getData("text/plain");
   // droppable.appendChild(document.getElementById(draggedId));
   
