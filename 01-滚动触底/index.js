@@ -5,7 +5,8 @@ app.addEventListener('scroll', (e) => {
   const scrollTop = e.target.scrollTop
 
   console.dir('scrollHeight = ', e.target.scrollHeight)
-  console.log('clientHeight = ', e.target.clientHeight)
+  console.log('clientHeight = ', e.target.clientHeight) // 包括 height + padding
+  console.log('offsetHeight = ', e.target.offsetHeight) // 包括 border-width + height + padding
   console.log('scrollTop = ', e.target.scrollTop)
   console.log('---------------')
 
