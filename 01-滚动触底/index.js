@@ -10,6 +10,7 @@ app.addEventListener('scroll', (e) => {
   console.log('---------------')
 
   if(Math.ceil(clientHeight + scrollTop) >= scrollHeight) {
-    console.log('触底') // 建议加上 防抖
+    console.log('触底') // 建议加上 锁或者防抖
+    alert('到底了~')
   }
 })
