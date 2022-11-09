@@ -1,0 +1,10 @@
+p {
+  height: 20px;
+  background: grey;
+}
+
+#app {
+  height: 400px;
+  border: 6px solid green; 
+  overflow-y: scroll;
+}
