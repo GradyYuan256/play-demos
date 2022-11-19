@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>使用 Blob 下载图片</title>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+    function init(url) {
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', url);
+      xhr.responseType = 'blob';
+      xhr.send();
+      xhr.onload = function () {
+        const fileBlob = xhr.response;
+        console.log(fileBlob);
+        const fileUrl = URL.createObjectURL(fileBlob); // 将 blob 转成 url 地址
+        console.log(fileUrl)
+
+        // add download a link
+        const aLink = document.createElement("a");
+        aLink.setAttribute('href', fileUrl);
+        aLink.innerHTML = 'download image';
+        aLink.setAttribute('download', 'demo.png');
+        document.body.appendChild(aLink);
+
+        // preview image
+        // const image = document.createElement("img");
+        // image.src = fileUrl;
+        // image.onload = function () {
+        //   URL.revokeObjectURL(this.src);
+        // }
+        // image.setAttribute('width', 300);
+        // document.body.appendChild(image);
+      }
+    }
+
+    let imgUrl = 'https://static.woshipm.com/views/2020101120205245921.jpeg';
+    init(imgUrl);
+  </script>
+</body>
+
+</html>
